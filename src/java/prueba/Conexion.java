@@ -55,4 +55,21 @@ public class Conexion {
         }
         return inventarios;
     }
+    
+    public int actualizar (String sql){
+        int cantidad =0;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(
+                "jdbc:mysql://107.180.2.89:3306/pruebatec","pruebatec", "Tecnica2@");
+            ps = con.createStatement();
+            cantidad = ps.executeUpdate(sql);
+            con.close();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormularioBean.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cantidad;
+    }
 }
