@@ -5,8 +5,8 @@
  */
 package prueba;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
 
 /**
  *
@@ -42,8 +42,7 @@ public class ListaPreciosBean {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = (porcentaje/100)+1;
-        actualizar();
-        
+        actualizar();       
     } 
 
     public int getCantidad() {
