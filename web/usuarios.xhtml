@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Usuarios</title>
+    </h:head>
+    <h:body>
+        <h2><h:outputText value="Lista de Usuarios"></h:outputText></h2>  
+        <h:dataTable value="#{usuarioBean.usuarios}" var="u">  
+            <h:column> 
+                <p name="header">ID</p>  
+                <h:outputText value="#{u.id}"/>  
+            </h:column>  
+            <h:column>  
+                <p name="header">Title</p>
+                <h:outputText value="#{u.title}"/>  
+            </h:column>  
+            <h:column>  
+                <p name="header">First Name</p>  
+                <h:outputText value="#{u.firstName}"/>  
+            </h:column>  
+            <h:column>  
+                <p name="header">Last Name</p>   
+                <h:outputText value="#{u.lastName}"/>  
+            </h:column>  
+            <h:column>  
+                <p name="header">Picture</p>   
+                <h:outputText value="#{u.picture}"/>  
+            </h:column>  
+        </h:dataTable>  
+    </h:body>
+</html>
+
