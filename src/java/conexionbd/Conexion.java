@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package formulario;
+package conexionbd;
 
+import formulario.FormularioBean;
+import formulario.Inventario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -29,7 +31,7 @@ public class Conexion {
         this.inventarios = new ArrayList<Inventario>();
     }
     
-    public ArrayList<Inventario> conectar (String sql){
+    public ArrayList<Inventario> obtenerInventarioBodegas (String sql){
         inventarios.clear();
         try{
             Class.forName("com.mysql.jdbc.Driver");

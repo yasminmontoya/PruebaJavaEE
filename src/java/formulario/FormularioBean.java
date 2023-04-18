@@ -5,6 +5,7 @@
  */
 package formulario;
 
+import conexionbd.Conexion;
 import java.util.ArrayList;
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
@@ -63,7 +64,7 @@ public class FormularioBean {
 
     public void setPrecioCompra(double precioCompra) {
         this.precioCompra = precioCompra;
-        conectar();
+        calcularCostoMedio();
     }
 
     public double getCostoMedio() {
@@ -74,9 +75,9 @@ public class FormularioBean {
         this.costoMedio = costoMedio;
     }
     
-    public void conectar(){
+    public void calcularCostoMedio(){
         String sql = "select * from tabla1 where cod_pro = "+this.codigoProducto+" and instalacion = '"+this.instalacion+"'";
-        this.inventarios = conexion.conectar(sql);
+        this.inventarios = conexion.obtenerInventarioBodegas(sql);
         double inventarioValorado=0;
         double costoEntrada=this.cantidadCompra*this.precioCompra;
         double inventarioFinal = 0;

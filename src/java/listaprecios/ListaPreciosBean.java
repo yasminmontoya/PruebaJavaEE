@@ -5,7 +5,7 @@
  */
 package listaprecios;
 
-import formulario.Conexion;
+import conexionbd.Conexion;
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
 
@@ -18,7 +18,7 @@ import javax.enterprise.context.ApplicationScoped;
 public class ListaPreciosBean {
     
     private String nombre;
-    private int porcentaje;
+    private double porcentaje;
     private Conexion conexion;
     private int cantidad;
 
@@ -37,12 +37,12 @@ public class ListaPreciosBean {
         this.nombre = nombre;
     }
 
-    public int getPorcentaje() {
+    public double getPorcentaje() {
         return porcentaje;
     }
 
-    public void setPorcentaje(int porcentaje) {
-        this.porcentaje = (porcentaje/100)+1;
+    public void setPorcentaje(double porcentaje) {
+        this.porcentaje = (porcentaje/100)+1;;
         actualizar();       
     } 
 
