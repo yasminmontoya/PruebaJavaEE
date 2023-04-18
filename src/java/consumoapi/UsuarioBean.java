@@ -31,7 +31,7 @@ public class UsuarioBean {
         this.usuarios= new ArrayList<Usuario>();
         this.ca = new ConsumoAPI();
         try {
-            this.usuarios = ca.peticionHttpGet();
+            this.usuarios = ca.getUsuarios();
         } catch (Exception ex) {
             Logger.getLogger(UsuarioBean.class.getName()).log(Level.SEVERE, null, ex);
         }
